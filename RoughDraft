@@ -4,11 +4,34 @@ public class Domineering {
 	/**
 	 * Draws the current state of the game, including instructions to the user.
 	 */
+	 
 	public static void draw(boolean[][] board, boolean verticalToPlay) {
-		StdDraw.clear();
-		StdDraw.setPenColor(StdDraw.BLACK);
-		StdDraw.filledRectangle(0, 0, 1, 1);
-		StdDraw.show(0);
+	StdDraw.clear();
+		StdDraw.setXscale(-.5, 9.5);
+		StdDraw.setYscale(-.5, 9.5);
+		StdDraw.setPenColor(StdDraw.BLUE);
+		for (int y = 1; y <= 7; y = y + 2) {
+			for (int x = 2; x <= 8 && y <= 7; x = x + 2) {
+				StdDraw.filledRectangle(x, y, .5, .5);
+			}
+		}
+		for (int y = 2; y <= 8; y = y + 2) {
+			for (int x = 1; x <= 7 && y <= 8; x = x + 2) {
+				StdDraw.filledRectangle(x, y, .5, .5);
+			}
+		}
+		StdDraw.setPenColor(StdDraw.GREEN);
+		for (int y = 1; y <= 7; y = y + 2) {
+			for (int x = 1; x <= 7 && y <= 7; x = x + 2) {
+				StdDraw.filledRectangle(x, y, .5, .5);
+			}
+		}
+		for (int y = 2; y <= 8; y = y + 2) {
+			for (int x = 2; x <= 8 && y <= 8; x = x + 2) {
+				StdDraw.filledRectangle(x, y, .5, .5);
+			}
+		}
+		StdDraw.show();
 	}
 
 	/**
